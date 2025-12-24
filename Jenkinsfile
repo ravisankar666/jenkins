@@ -1,46 +1,55 @@
 pipeline {
-    agent  {
-    node {
-        label 'AGENT-1'
-        
+    agent {
+        node {
+            label 'AGENT-1'
+        }
     }
-}
-    environment {
-         COURSE = "Jenkins"
-        }
+     environment {
+        COURSE = "Jenkins"
+    }
     stages {
-        stage('Build') { 
-            script{
-                sh """
-                    echo "Building"
-                """
+        stage('Build') {
+            steps {
+                script{
+                    sh """
+                        echo "Building"
+                      
+                    """
+                }
             }
         }
-        stage('Test') { 
-            script{
-                sh """
-                    echo "Building"
-                """
+        stage('Test') {
+            steps {
+                 script{
+                    sh """
+                        echo "Building"
+                      
+                    """
+                }
             }
         }
-        stage('Deploy') { 
-            script{
-                sh """
-                    echo "Building"
-                """
+        stage('Deploy') {
+            steps {
+                script{
+                    sh """
+                        echo "Building"
+                      
+                    """
+                }
+
             }
         }
     }
     post{
         always{
-            echo 'i will always say hello again!'
+            echo 'I will always say Hello again!'
             cleanWs()
         }
-        success{
-            echo 'i will run if success'
+        success {
+            echo 'I will run if success'
         }
-        failure{
-             echo 'i will run if failure'
+        failure {
+            echo 'I will run if failure'
         }
     }
 }
