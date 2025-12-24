@@ -1,0 +1,158 @@
+Started by user admin
+Obtained Jenkinsfile from git https://github.com/ravisankar666/jenkins.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on AGENT-1 in /home/ec2-user/jenkins/workspace/hello-pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/ravisankar666/jenkins.git
+ > git init /home/ec2-user/jenkins/workspace/hello-pipeline # timeout=10
+Fetching upstream changes from https://github.com/ravisankar666/jenkins.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.5'
+ > git fetch --tags --force --progress -- https://github.com/ravisankar666/jenkins.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/ravisankar666/jenkins.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+Checking out Revision 4660e583b633394608ebf9d6c69edbecd4ef11be (refs/remotes/origin/main)
+Commit message: "jenkins"
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4660e583b633394608ebf9d6c69edbecd4ef11be # timeout=10
+ > git rev-list --no-walk 4660e583b633394608ebf9d6c69edbecd4ef11be # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ echo Building
+Building
++ echo Jenkins
+Jenkins
++ sleep 10
++ env
+SHELL=/bin/bash
+RUN_TESTS_DISPLAY_URL=http://jenkins.daws86.fun:8080/job/hello-pipeline/4/display/redirect?page=tests
+COURSE=Jenkins
+HISTSIZE=10000
+JENKINS_SERVER_COOKIE=durable-f12869697d11b6d7cfe5ca793a42796488d9bbccf625b9dadc73b5f43e3edfc4
+GIT_PREVIOUS_SUCCESSFUL_COMMIT=4660e583b633394608ebf9d6c69edbecd4ef11be
+HISTTIMEFORMAT=%d/%m/%y %T 
+AWS_DEFAULT_REGION=us-east-1
+RUN_CHANGES_DISPLAY_URL=http://jenkins.daws86.fun:8080/job/hello-pipeline/4/display/redirect?page=changes
+HUDSON_HOME=/var/lib/jenkins
+PWD=/home/ec2-user/jenkins/workspace/hello-pipeline
+LOGNAME=ec2-user
+XDG_SESSION_TYPE=tty
+BUILD_URL=http://jenkins.daws86.fun:8080/job/hello-pipeline/4/
+ANSIBLE_DEPRECATION_WARNINGS=False
+JOB_URL=http://jenkins.daws86.fun:8080/job/hello-pipeline/
+BUILD_NUMBER=4
+MOTD_SHOWN=pam
+JENKINS_NODE_COOKIE=68261456-4fd5-4f0f-aca3-c173163a2444
+BUILD_DISPLAY_NAME=#4
+HOME=/home/ec2-user
+LANG=C.UTF-8
+ANSIBLE_FORCE_COLOR=1
+JENKINS_URL=http://jenkins.daws86.fun:8080/
+JOB_BASE_NAME=hello-pipeline
+PROMPT_COMMAND=$(history -w)
+JOB_NAME=hello-pipeline
+RUN_DISPLAY_URL=http://jenkins.daws86.fun:8080/job/hello-pipeline/4/display/redirect
+SSH_CONNECTION=172.31.221.221 44526 172.31.33.24 22
+JOB_DISPLAY_URL=http://jenkins.daws86.fun:8080/job/hello-pipeline/display/redirect
+WORKSPACE=/home/ec2-user/jenkins/workspace/hello-pipeline
+GIT_PREVIOUS_COMMIT=4660e583b633394608ebf9d6c69edbecd4ef11be
+HUDSON_URL=http://jenkins.daws86.fun:8080/
+XDG_SESSION_CLASS=user
+NODE_NAME=AGENT-1
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+USER=ec2-user
+HUDSON_SERVER_COOKIE=1ddf1919736f51e7
+GIT_URL=https://github.com/ravisankar666/jenkins.git
+SHLVL=2
+BUILD_TAG=jenkins-hello-pipeline-4
+EXECUTOR_NUMBER=1
+HUDSON_COOKIE=62d9fdbe-5680-478b-ad91-0d6ba80411ab
+SYSTEMD_PAGER=cat
+XDG_SESSION_ID=3
+JENKINS_HOME=/var/lib/jenkins
+XDG_RUNTIME_DIR=/run/user/1001
+SSH_CLIENT=172.31.221.221 44526 22
+REQUESTS_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
+GIT_COMMIT=4660e583b633394608ebf9d6c69edbecd4ef11be
+which_declare=declare -f
+NODE_LABELS=AGENT-1
+STAGE_NAME=Build
+AWS_CA_BUNDLE=/etc/pki/tls/certs/ca-bundle.crt
+WORKSPACE_TMP=/home/ec2-user/jenkins/workspace/hello-pipeline@tmp
+XDG_DATA_DIRS=/home/ec2-user/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+PATH=/home/ec2-user/.local/bin:/home/ec2-user/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+RUN_ARTIFACTS_DISPLAY_URL=http://jenkins.daws86.fun:8080/job/hello-pipeline/4/display/redirect?page=artifacts
+CI=true
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus
+GIT_BRANCH=origin/main
+BUILD_ID=4
+OLDPWD=/home/ec2-user
+BASH_FUNC_which%%=() {  ( alias;
+ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+}
+_=/usr/bin/env
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ echo Building
+Building
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ echo Building
+Building
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+I will always say Hello again!
+[Pipeline] cleanWs
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] done
+[Pipeline] echo
+I will run if success
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
