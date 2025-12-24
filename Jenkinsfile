@@ -22,4 +22,16 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            echo 'i will always say hello again!'
+            cleanWs()
+        }
+        success{
+            echo 'i will run if success'
+        }
+        failure{
+             echo 'i will run if failure'
+        }
+    }
 }
