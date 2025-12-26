@@ -17,7 +17,8 @@ pipeline {
         booleanParam(name: 'DEPLOY', defaultValue: false, description: 'Toggle this value')
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
-    }
+    }  
+    // this is build section
     stages {
         stage('Build') {
             steps {
@@ -28,7 +29,7 @@ pipeline {
                         sleep 10
                         env
 
-                        echo "Hello ${params.PERSON}"
+                        echo "Hello ${params.PERSON}"                                                                                               
                         echo "Biography: ${params.BIOGRAPHY}"
                         echo "Toggle: ${params.DEPLOY}"
                         echo "Choice: ${params.CHOICE}"
@@ -76,3 +77,21 @@ pipeline {
         }
     }
 }
+
+
+/* 
+_=/usr/bin/env
++ echo 'Hello Mr Jenkins'
+Hello Mr Jenkins
++ echo 'Biography: we testing the pipeline parameter'\''s'
+Biography: we testing the pipeline parameter's
++ echo 'Toggle: false'
+Toggle: false
++ echo 'Choice: One'
+Choice: One
++ echo 'Password: devops'
+Password: devops */
+
+
+
+/* # if commit id changr]e */
