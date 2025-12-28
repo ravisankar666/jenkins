@@ -2,7 +2,7 @@
 
 Partition the disk
 ```
-growpart /dev/nvme0n1 4
+growpart /dev/xvda 4
 
 lvextend -L +10G /dev/mapper/RootVG-varVol
 lvextend -L +10G /dev/mapper/RootVG-rootVol
